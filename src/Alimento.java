@@ -1,4 +1,4 @@
-public class alimento extends Producto{
+public class Alimento extends Producto implements Vendible {
     private boolean esVegetariano;
     private int calorias;
 
@@ -30,4 +30,14 @@ public class alimento extends Producto{
         String tipoDieta = esVegetariano ? "Sí" : "No";
         System.out.println("Tipo: Alimento | Vegetariano: " + tipoDieta + " | Calorías: " + calorias);
     }
+
+    @Override
+    public double calcularPrecioFinal() {
+        double precioFinal = getPrecio();
+        if (calorias > 500) {
+            precioFinal += 1.0; // Aumenta 1.0 si las calorías son mayores a 500
+        }
+        return precioFinal;
+    }
+
 }
