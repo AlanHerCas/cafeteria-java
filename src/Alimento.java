@@ -2,7 +2,6 @@ public class Alimento extends Producto implements Vendible {
     private boolean esVegetariano;
     private int calorias;
 
-    // Constructor ahora incluye 'disponible'
     public Alimento(String nombre, double precio, boolean disponible, boolean esVegetariano, int calorias) {
         super(nombre, precio, disponible);
         this.esVegetariano = esVegetariano;
